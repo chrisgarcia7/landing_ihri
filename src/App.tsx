@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { PaginaInicio } from './components/paginaInicio/paginaInicio.tsx'
+import  PaginaInicio  from './components/paginaInicio/paginaInicio.tsx'
 
 function App() {
   return (
