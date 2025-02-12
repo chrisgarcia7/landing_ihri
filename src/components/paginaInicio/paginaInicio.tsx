@@ -1,4 +1,15 @@
 import React, {useEffect, useRef} from 'react'
+import aboutImage from './assets/about.jpg'
+import exploreImage from './assets/explore.jpg'
+import facebook from './assets/facebook.png'
+import instagram from './assets/instagram.png'
+import room1Image from './assets/room-1.jpg'
+import room2Image from './assets/room-2.jpg'
+import room3Image from './assets/room-3.jpg'
+import serviceImage from './assets/service.jpg'
+import twitter from './assets/twitter.png'
+import youtube from './assets/youtube.png'
+
 import ScrollReveal from 'scrollreveal';
 import './styles.css'
 
@@ -88,7 +99,7 @@ export default function PaginaInicio() {
 
       <section className="section__container about__container" id="about">
         <div className="about__image">
-          <img src='assets/about.jpg' alt="about11" />
+          <img src={aboutImage} alt="about11" />
         </div>
         <div className="about__content">
           <p className="section__subheader">Acerca de Nosotros</p>
@@ -125,7 +136,7 @@ export default function PaginaInicio() {
           </p>
         </div>
         <div className="about__image">
-          <img src="assets/about.jpg" alt="about" />
+          <img src={aboutImage} alt="about" />
         </div>
       </section>
 
@@ -135,7 +146,7 @@ export default function PaginaInicio() {
         <div className="room__grid">
           <div className="room__card">
             <div className="room__card__image">
-              <img src="assets/room-1.jpg" alt="room" />
+              <img src={room1Image} alt="room" />
             </div>
             <div className="room__card__details">
               <h4>Deluxe Ocean View</h4>
@@ -151,7 +162,7 @@ export default function PaginaInicio() {
           </div>
           <div class="room__card">
             <div class="room__card__image">
-              <img src="assets/room-2.jpg" alt="room" />
+              <img src={room2Image} alt="room" />
             </div>
             <div class="room__card__details">
               <h4>Executive Cityscape Room</h4>
@@ -167,7 +178,7 @@ export default function PaginaInicio() {
           </div>
           <div class="room__card">
             <div class="room__card__image">
-              <img src="assets/room-3.jpg" alt="room" />
+              <img src={room3Image} alt="room" />
             </div>
             <div class="room__card__details">
               <h4>Family Garden Retreat</h4>
@@ -185,7 +196,7 @@ export default function PaginaInicio() {
         <div class="room__grid">
           <div class="room__card">
             <div class="room__card__image">
-              <img src="assets/room-1.jpg" alt="room" />
+              <img src={room1Image} alt="room" />
             </div>
             <div class="room__card__details">
               <h4>Deluxe Ocean View</h4>
@@ -201,7 +212,7 @@ export default function PaginaInicio() {
           </div>
           <div class="room__card">
             <div class="room__card__image">
-              <img src="assets/room-2.jpg" alt="room" />
+              <img src={room2Image} alt="room" />
             </div>
             <div class="room__card__details">
               <h4>Executive Cityscape Room</h4>
@@ -217,7 +228,7 @@ export default function PaginaInicio() {
           </div>
           <div class="room__card">
             <div class="room__card__image">
-              <img src="assets/room-3.jpg" alt="room" />
+              <img src={room3Image} alt="room" />
             </div>
             <div class="room__card__details">
               <h4>Family Garden Retreat</h4>
@@ -285,16 +296,16 @@ export default function PaginaInicio() {
             </ul>
             <div className="footer__socials">
               <a href="#">
-                <img src="assets/facebook.png" alt="facebook" />
+                <img src={facebook} alt="facebook" />
               </a>
               <a href="#">
-                <img src="assets/instagram.png" alt="instagram" />
+                <img src={instagram} alt="instagram" />
               </a>
               <a href="#">
-                <img src="assets/youtube.png" alt="youtube" />
+                <img src={youtube} alt="youtube" />
               </a>
               <a href="#">
-                <img src="assets/twitter.png" alt="twitter" />
+                <img src={twitter} alt="twitter" />
               </a>
             </div>
           </div>
