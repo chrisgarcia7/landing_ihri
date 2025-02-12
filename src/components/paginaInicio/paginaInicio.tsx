@@ -12,6 +12,7 @@ import youtube from './assets/youtube.png'
 
 import ScrollReveal from 'scrollreveal';
 import './styles.css'
+import Mapa from '../Mapa.tsx'
 
 export default function PaginaInicio() {
   const menuBtnRef = useRef(null);
@@ -250,7 +251,7 @@ export default function PaginaInicio() {
         <h2 className="section__header">Puedes encontrarnos.</h2>
         <div className="explore__bg">
           <div className="explore__content">
-            <p className="section__description">ubicación física</p>
+            <Mapa></Mapa>
           </div>
         </div>
       </section>
