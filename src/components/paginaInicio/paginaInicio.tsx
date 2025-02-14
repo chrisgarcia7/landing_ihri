@@ -16,10 +16,22 @@ import ScrollReveal from 'scrollreveal';
 import './styles.css';
 import Mapa from '../Mapa.tsx';
 import LoginModal from '../modal/LoginModal.tsx';
+import './styles.css';
+import Mapa from '../Mapa.tsx';
+import LoginModal from '../modal/LoginModal.tsx';
 
 export default function PaginaInicio() {
   const menuBtnRef = useRef(null);
   const navLinksRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   const [isModalOpen, setIsModalOpen] = useState(false); 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -70,6 +82,7 @@ export default function PaginaInicio() {
     ScrollReveal().reveal(".room__card", { ...scrollRevealOption, interval: 500 });
   }, []);
 
+
   return (
     <>
       <header className="header">
@@ -98,6 +111,9 @@ export default function PaginaInicio() {
               <a href="#contact">Contact</a>
             </li>
           </ul>
+          <button className="btn nav__btn" onClick={handleOpenModal}>
+            Usuario
+          </button>
           <button className="btn nav__btn" onClick={handleOpenModal}>
             Usuario
           </button>
@@ -169,8 +185,11 @@ integral para las personas con discapacidad física ofreciéndole servicios y pr
           </div>
           <div className="room__card">
             <div className="room__card__image">
+          <div className="room__card">
+            <div className="room__card__image">
               <img src={room2Image} alt="room" />
             </div>
+            <div className="room__card__details">
             <div className="room__card__details">
               <h4>Executive Cityscape Room</h4>
               <p>
@@ -181,12 +200,16 @@ integral para las personas con discapacidad física ofreciéndole servicios y pr
                 Starting from <span>$199/night</span>
               </h5>
               <button className="btn">Conoce más</button>
+              <button className="btn">Conoce más</button>
             </div>
           </div>
           <div className="room__card">
             <div className="room__card__image">
+          <div className="room__card">
+            <div className="room__card__image">
               <img src={room3Image} alt="room" />
             </div>
+            <div className="room__card__details">
             <div className="room__card__details">
               <h4>Family Garden Retreat</h4>
               <p>
@@ -196,6 +219,7 @@ integral para las personas con discapacidad física ofreciéndole servicios y pr
               <h5>
                 Starting from <span>$249/night</span>
               </h5>
+              <button className="btn">Conoce más</button>
               <button className="btn">Conoce más</button>
             </div>
           </div>
@@ -269,6 +293,9 @@ integral para las personas con discapacidad física ofreciéndole servicios y pr
         </div>
         <div className="footer__bar">Copyright © 2025</div>
       </footer>
+
+      {/* Modal de Login */}
+      <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
 
       {/* Modal de Login */}
       <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
