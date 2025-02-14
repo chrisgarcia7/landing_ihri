@@ -1,23 +1,34 @@
-import React, {useEffect, useRef} from 'react'
-import aboutImage from './assets/about.jpg'
-import exploreImage from './assets/explore.jpg'
-import facebook from './assets/facebook.png'
-import instagram from './assets/instagram.png'
-import room1Image from './assets/room-1.jpg'
-import room2Image from './assets/room-2.jpg'
-import room3Image from './assets/room-3.jpg'
-import serviceImage from './assets/service.jpg'
-import twitter from './assets/twitter.png'
-import youtube from './assets/youtube.png'
+import React, { useState, useEffect, useRef } from 'react';
+import aboutImage from './assets/about.jpg';
+import exploreImage from './assets/explore.jpg';
+import facebook from './assets/facebook.png';
+import instagram from './assets/instagram.png';
+import room1Image from './assets/room-1.jpg';
+import room2Image from './assets/room-2.jpg';
+import room3Image from './assets/room-3.jpg';
+import serviceImage from './assets/service.jpg';
+import twitter from './assets/twitter.png';
+import youtube from './assets/youtube.png';
+import instalacion1 from './assets/instalacion1.jpg'
+import instalacion6 from './assets/instalacion6.jpg'
 
 import ScrollReveal from 'scrollreveal';
-import './styles.css'
-import Mapa from '../Mapa.tsx'
+import './styles.css';
+import Mapa from '../Mapa.tsx';
+import LoginModal from '../modal/LoginModal.tsx';
 
 export default function PaginaInicio() {
   const menuBtnRef = useRef(null);
   const navLinksRef = useRef(null);
-  
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   useEffect(() => {
     const menuBtn = menuBtnRef.current;
     const navLinks = navLinksRef.current;
@@ -50,7 +61,6 @@ export default function PaginaInicio() {
       duration: 1000,
     };
 
-
     ScrollReveal().reveal(".header__container p", scrollRevealOption);
     ScrollReveal().reveal(".header__container h1", { ...scrollRevealOption, delay: 500 });
     ScrollReveal().reveal(".about__image img", { ...scrollRevealOption, origin: "left" });
@@ -59,6 +69,7 @@ export default function PaginaInicio() {
     ScrollReveal().reveal(".about__content .section__description", { ...scrollRevealOption, delay: 1500 });
     ScrollReveal().reveal(".room__card", { ...scrollRevealOption, interval: 500 });
   }, []);
+
   return (
     <>
       <header className="header">
@@ -87,10 +98,11 @@ export default function PaginaInicio() {
               <a href="#contact">Contact</a>
             </li>
           </ul>
-          <button className="btn nav__btn">Usuario</button>
+          <button className="btn nav__btn" onClick={handleOpenModal}>
+            Usuario
+          </button>
         </nav>
         <div className="section__container header__container" id="home">
-          <p>Simple - Único - amigable</p>
           <h1>
             Servicios de personas con discapacidad
             <br />
@@ -100,44 +112,38 @@ export default function PaginaInicio() {
 
       <section className="section__container about__container" id="about">
         <div className="about__image">
-          <img src={aboutImage} alt="about11" />
+          <img src={instalacion1} alt="about11" />
         </div>
         <div className="about__content">
           <p className="section__subheader">Acerca de Nosotros</p>
           <h2 className="section__header">
-            ¡Las Mejores Vacaciones Comienzan Aquí!
+          Nuestra Historia: Un Compromiso con la Rehabilitación
           </h2>
           <p className="section__description">
-            Con un enfoque en alojamientos de calidad, experiencias
-            personalizadas y reservas sin complicaciones, nuestra plataforma
-            está dedicada a asegurar que cada viajero comience sus vacaciones
-            soñadas con confianza y emoción.
+            
+El Patronato Nacional de Rehabilitación para el Inválido, con sede en Tegucigalpa, Honduras, es una institución emblemática fundada el 2 de abril de 1962, dedicada a la noble tarea de apoyar a personas con discapacidades físicas. Desde su creación, ha sido un pilar fundamental en la provisión de zapatos ortopédicos y prótesis, mejorando significativamente la calidad de vida de sus beneficiarios. A lo largo de los años, el Patronato ha evolucionado para adaptarse a las necesidades cambiantes de la comunidad a la que sirve, manteniendo siempre su compromiso con la excelencia y la innovación en el campo de la rehabilitación física. Su historia es un testimonio de la resiliencia y la dedicación, reflejando el espíritu de servicio y la solidaridad que caracteriza a la sociedad hondureña.
           </p>
         </div>
         <div className="about__content">
           <p className="section__subheader">Misión</p>
           <h2 className="section__header">
-            ¡Las Mejores Vacaciones Comienzan Aquí!
+          Comprometidos con la Inclusión y la Rehabilitación
           </h2>
           <p className="section__description">
-            Con un enfoque en alojamientos de calidad, experiencias
-            personalizadas y reservas sin complicaciones, nuestra plataforma
-            está dedicada a asegurar que cada viajero comience sus vacaciones
-            soñadas con confianza y emoción.
+          Somos una institución sin fines de lucro en el campo de la rehabilitación
+integral para las personas con discapacidad física ofreciéndole servicios y productos para mejorar su proceso de rehabilitación.
+
           </p>
           <p className="section__subheader">Visión</p>
           <h2 className="section__header">
-            ¡Las Mejores Vacaciones Comienzan Aquí!
+          Liderando el Camino hacia una Rehabilitación Accesible y Equitativa
           </h2>
           <p className="section__description">
-            Con un enfoque en alojamientos de calidad, experiencias
-            personalizadas y reservas sin complicaciones, nuestra plataforma
-            está dedicada a asegurar que cada viajero comience sus vacaciones
-            soñadas con confianza y emoción.
+          Ser una institución de rehabilitación integral física ofreciendo servicios y productos de alta calidad accesibles equitativos y centrados mediante la necesidad de cada persona con discapacidad
           </p>
         </div>
         <div className="about__image">
-          <img src={aboutImage} alt="about" />
+          <img src={instalacion6} alt="about" />
         </div>
       </section>
 
@@ -161,11 +167,11 @@ export default function PaginaInicio() {
               <button className="btn">Conoce más</button>
             </div>
           </div>
-          <div class="room__card">
-            <div class="room__card__image">
+          <div className="room__card">
+            <div className="room__card__image">
               <img src={room2Image} alt="room" />
             </div>
-            <div class="room__card__details">
+            <div className="room__card__details">
               <h4>Executive Cityscape Room</h4>
               <p>
                 Experience urban elegance and modern comfort in the heart of the
@@ -174,14 +180,14 @@ export default function PaginaInicio() {
               <h5>
                 Starting from <span>$199/night</span>
               </h5>
-              <button class="btn">Conoce mas</button>
+              <button className="btn">Conoce más</button>
             </div>
           </div>
-          <div class="room__card">
-            <div class="room__card__image">
+          <div className="room__card">
+            <div className="room__card__image">
               <img src={room3Image} alt="room" />
             </div>
-            <div class="room__card__details">
+            <div className="room__card__details">
               <h4>Family Garden Retreat</h4>
               <p>
                 Spacious and inviting, perfect for creating cherished memories
@@ -190,57 +196,7 @@ export default function PaginaInicio() {
               <h5>
                 Starting from <span>$249/night</span>
               </h5>
-              <button class="btn">Conoce mas</button>
-            </div>
-          </div>
-        </div>
-        <div class="room__grid">
-          <div class="room__card">
-            <div class="room__card__image">
-              <img src={room1Image} alt="room" />
-            </div>
-            <div class="room__card__details">
-              <h4>Deluxe Ocean View</h4>
-              <p>
-                Bask in luxury with breathtaking ocean views from your private
-                suite.
-              </p>
-              <h5>
-                Starting from <span>$299/night</span>
-              </h5>
-              <button class="btn">Conoce mas</button>
-            </div>
-          </div>
-          <div class="room__card">
-            <div class="room__card__image">
-              <img src={room2Image} alt="room" />
-            </div>
-            <div class="room__card__details">
-              <h4>Executive Cityscape Room</h4>
-              <p>
-                Experience urban elegance and modern comfort in the heart of the
-                city.
-              </p>
-              <h5>
-                Starting from <span>$199/night</span>
-              </h5>
-              <button class="btn">Conoce mas</button>
-            </div>
-          </div>
-          <div class="room__card">
-            <div class="room__card__image">
-              <img src={room3Image} alt="room" />
-            </div>
-            <div class="room__card__details">
-              <h4>Family Garden Retreat</h4>
-              <p>
-                Spacious and inviting, perfect for creating cherished memories
-                with loved ones.
-              </p>
-              <h5>
-                Starting from <span>$249/night</span>
-              </h5>
-              <button class="btn">Conoce mas</button>
+              <button className="btn">Conoce más</button>
             </div>
           </div>
         </div>
@@ -313,6 +269,9 @@ export default function PaginaInicio() {
         </div>
         <div className="footer__bar">Copyright © 2025</div>
       </footer>
+
+      {/* Modal de Login */}
+      <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </>
   );
 }
