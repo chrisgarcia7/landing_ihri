@@ -1,23 +1,32 @@
-import React, {useEffect, useRef} from 'react'
-import aboutImage from './assets/about.jpg'
-import exploreImage from './assets/explore.jpg'
-import facebook from './assets/facebook.png'
-import instagram from './assets/instagram.png'
-import room1Image from './assets/room-1.jpg'
-import room2Image from './assets/room-2.jpg'
-import room3Image from './assets/room-3.jpg'
-import serviceImage from './assets/service.jpg'
-import twitter from './assets/twitter.png'
-import youtube from './assets/youtube.png'
+import React, { useState, useEffect, useRef } from 'react';
+import aboutImage from './assets/about.jpg';
+import exploreImage from './assets/explore.jpg';
+import facebook from './assets/facebook.png';
+import instagram from './assets/instagram.png';
+import room1Image from './assets/room-1.jpg';
+import room2Image from './assets/room-2.jpg';
+import room3Image from './assets/room-3.jpg';
+import serviceImage from './assets/service.jpg';
+import twitter from './assets/twitter.png';
+import youtube from './assets/youtube.png';
 
 import ScrollReveal from 'scrollreveal';
-import './styles.css'
-import Mapa from '../Mapa.tsx'
+import './styles.css';
+import Mapa from '../Mapa.tsx';
+import LoginModal from '../modal/LoginModal.tsx';
 
 export default function PaginaInicio() {
   const menuBtnRef = useRef(null);
   const navLinksRef = useRef(null);
-  
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   useEffect(() => {
     const menuBtn = menuBtnRef.current;
     const navLinks = navLinksRef.current;
@@ -50,7 +59,6 @@ export default function PaginaInicio() {
       duration: 1000,
     };
 
-
     ScrollReveal().reveal(".header__container p", scrollRevealOption);
     ScrollReveal().reveal(".header__container h1", { ...scrollRevealOption, delay: 500 });
     ScrollReveal().reveal(".about__image img", { ...scrollRevealOption, origin: "left" });
@@ -59,6 +67,7 @@ export default function PaginaInicio() {
     ScrollReveal().reveal(".about__content .section__description", { ...scrollRevealOption, delay: 1500 });
     ScrollReveal().reveal(".room__card", { ...scrollRevealOption, interval: 500 });
   }, []);
+
   return (
     <>
       <header className="header">
@@ -87,7 +96,9 @@ export default function PaginaInicio() {
               <a href="#contact">Contact</a>
             </li>
           </ul>
-          <button className="btn nav__btn">Usuario</button>
+          <button className="btn nav__btn" onClick={handleOpenModal}>
+            Usuario
+          </button>
         </nav>
         <div className="section__container header__container" id="home">
           <p>Simple - Único - amigable</p>
@@ -161,11 +172,11 @@ export default function PaginaInicio() {
               <button className="btn">Conoce más</button>
             </div>
           </div>
-          <div class="room__card">
-            <div class="room__card__image">
+          <div className="room__card">
+            <div className="room__card__image">
               <img src={room2Image} alt="room" />
             </div>
-            <div class="room__card__details">
+            <div className="room__card__details">
               <h4>Executive Cityscape Room</h4>
               <p>
                 Experience urban elegance and modern comfort in the heart of the
@@ -174,14 +185,14 @@ export default function PaginaInicio() {
               <h5>
                 Starting from <span>$199/night</span>
               </h5>
-              <button class="btn">Conoce mas</button>
+              <button className="btn">Conoce más</button>
             </div>
           </div>
-          <div class="room__card">
-            <div class="room__card__image">
+          <div className="room__card">
+            <div className="room__card__image">
               <img src={room3Image} alt="room" />
             </div>
-            <div class="room__card__details">
+            <div className="room__card__details">
               <h4>Family Garden Retreat</h4>
               <p>
                 Spacious and inviting, perfect for creating cherished memories
@@ -190,57 +201,7 @@ export default function PaginaInicio() {
               <h5>
                 Starting from <span>$249/night</span>
               </h5>
-              <button class="btn">Conoce mas</button>
-            </div>
-          </div>
-        </div>
-        <div class="room__grid">
-          <div class="room__card">
-            <div class="room__card__image">
-              <img src={room1Image} alt="room" />
-            </div>
-            <div class="room__card__details">
-              <h4>Deluxe Ocean View</h4>
-              <p>
-                Bask in luxury with breathtaking ocean views from your private
-                suite.
-              </p>
-              <h5>
-                Starting from <span>$299/night</span>
-              </h5>
-              <button class="btn">Conoce mas</button>
-            </div>
-          </div>
-          <div class="room__card">
-            <div class="room__card__image">
-              <img src={room2Image} alt="room" />
-            </div>
-            <div class="room__card__details">
-              <h4>Executive Cityscape Room</h4>
-              <p>
-                Experience urban elegance and modern comfort in the heart of the
-                city.
-              </p>
-              <h5>
-                Starting from <span>$199/night</span>
-              </h5>
-              <button class="btn">Conoce mas</button>
-            </div>
-          </div>
-          <div class="room__card">
-            <div class="room__card__image">
-              <img src={room3Image} alt="room" />
-            </div>
-            <div class="room__card__details">
-              <h4>Family Garden Retreat</h4>
-              <p>
-                Spacious and inviting, perfect for creating cherished memories
-                with loved ones.
-              </p>
-              <h5>
-                Starting from <span>$249/night</span>
-              </h5>
-              <button class="btn">Conoce mas</button>
+              <button className="btn">Conoce más</button>
             </div>
           </div>
         </div>
@@ -313,6 +274,9 @@ export default function PaginaInicio() {
         </div>
         <div className="footer__bar">Copyright © 2025</div>
       </footer>
+
+      {/* Modal de Login */}
+      <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </>
   );
 }
