@@ -61,203 +61,36 @@ export default function CardProductos() {
           imagen: producto3,
           titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
       },
-      {
-          idProducto: 4,
-          imagen: producto4,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 5,
-          imagen: producto5,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 6,
-          imagen: producto6,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 7,
-          imagen: producto7,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 8,
-          imagen: producto8,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 9,
-          imagen: producto9,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 10,
-          imagen: producto10,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 11,
-          imagen: producto11,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 12,
-          imagen: producto12,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 13,
-          imagen: producto13,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 14,
-          imagen: producto14,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 15,
-          imagen: producto15,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 16,
-          imagen: producto16,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 17,
-          imagen: producto17,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 18,
-          imagen: producto18,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 19,
-          imagen: producto19,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 20,
-          imagen: producto20,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 21,
-          imagen: producto21,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 22,
-          imagen: producto22,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 23,
-          imagen: producto23,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 24,
-          imagen: producto24,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 25,
-          imagen: producto25,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 26,
-          imagen: producto26,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 27,
-          imagen: producto27,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 28,
-          imagen: producto28,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 29,
-          imagen: producto29,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 30,
-          imagen: producto30,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 31,
-          imagen: producto31,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 32,
-          imagen: producto32,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 33,
-          imagen: producto33,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 34,
-          imagen: producto34,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 35,
-          imagen: producto35,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 36,
-          imagen: producto36,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 37,
-          imagen: producto37,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 38,
-          imagen: producto38,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 39,
-          imagen: producto39,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 40,
-          imagen: producto40,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 41,
-          imagen: producto41,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 42,
-          imagen: producto42,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
+      
   ])
   return (
-    <div>CardProductos</div>
+    <div className="container mt-5">
+      <div id="carouselExample" className="carousel slide" data-ride="carousel">
+        <div className="carousel-inner">
+          {productos.map((producto, index) => (
+            <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={producto.idProducto}>
+              <div className="row">
+                <div className="col">
+                  <div className="card">
+                    <img src={producto.imagen} className="card-img-top" alt={producto.titulo} />
+                    <div className="card-body">
+                      <h5 className="card-title">{producto.titulo}</h5>
+                    </div>
+                  </div>
+                </div>
+                {/* Puedes agregar más columnas para más productos en cada slide */}
+              </div>
+            </div>
+          ))}
+        </div>
+        <a className="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a className="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
+        <button className="btn">Conoce más</button>
+      </div>
+    </div>
   )
 }
