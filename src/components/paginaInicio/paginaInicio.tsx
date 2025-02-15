@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, {  useEffect, useState } from 'react';
 import aboutImage from './assets/about.jpg';
 import exploreImage from './assets/explore.jpg';
 import facebook from './assets/facebook.png';
@@ -12,46 +12,23 @@ import youtube from './assets/youtube.png';
 
 import ScrollReveal from 'scrollreveal';
 import './styles.css';
-import Mapa from '../Mapa.tsx';
+import Mapa from '../paginaInicio/components/Mapa.tsx';
 import LoginModal from '../modal/LoginModal.tsx';
 import CardProductos from '../CardProductos/CardProductos.tsx';
+import Navbar from '../../globalComponents/navbar.tsx';
 
 export default function PaginaInicio() {
-  const menuBtnRef = useRef(null);
-  const navLinksRef = useRef(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
-  useEffect(() => {
-    const menuBtn = menuBtnRef.current;
-    const navLinks = navLinksRef.current;
-    const menuBtnIcon = menuBtn.querySelector("i");
-
-    const handleMenuClick = () => {
-      navLinks.classList.toggle("open");
-      const isOpen = navLinks.classList.contains("open");
-      menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+  
+   const [isModalOpen, setIsModalOpen] = useState(false); 
+  
+    const handleOpenModal = () => {
+      setIsModalOpen(true);
+    };
+  
+    const handleCloseModal = () => {
+      setIsModalOpen(false);
     };
 
-    const handleNavClick = () => {
-      navLinks.classList.remove("open");
-      menuBtnIcon.setAttribute("class", "ri-menu-line");
-    };
-
-    menuBtn.addEventListener("click", handleMenuClick);
-    navLinks.addEventListener("click", handleNavClick);
-
-    return () => {
-      menuBtn.removeEventListener("click", handleMenuClick);
-      navLinks.removeEventListener("click", handleNavClick);
-    };
-  }, []);
 
   useEffect(() => {
     const scrollRevealOption = {
@@ -72,35 +49,7 @@ export default function PaginaInicio() {
   return (
     <>
       <header className="header">
-        <nav>
-          <div className="nav__bar">
-            <div className="logo">
-              <a href="#">
-                <img src="#" alt="logo" />
-              </a>
-            </div>
-            <div className="nav__menu__btn" ref={menuBtnRef}>
-              <i className="ri-menu-line"></i>
-            </div>
-          </div>
-          <ul className="nav__links" ref={navLinksRef}>
-            <li>
-              <a href="#home">Inicio</a>
-            </li>
-            <li>
-              <a href="#about">Acerca</a>
-            </li>
-            <li>
-              <a href="#service">Catálogo</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-          <button className="btn nav__btn" onClick={handleOpenModal}>
-            Usuario
-          </button>
-        </nav>
+       <Navbar handleOpenModal={handleOpenModal}></Navbar>
         <div className="section__container header__container" id="home">
           <p>Simple - Único - amigable</p>
           <h1>
