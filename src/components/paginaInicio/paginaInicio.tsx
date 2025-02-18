@@ -9,6 +9,8 @@ import room3Image from './assets/room-3.jpg';
 import serviceImage from './assets/service.jpg';
 import twitter from './assets/twitter.png';
 import youtube from './assets/youtube.png';
+import instalacion1 from './assets/instalacion1.jpg'
+import instalacion6 from './assets/instalacion6.jpg'
 
 import ScrollReveal from 'scrollreveal';
 import './styles.css';
@@ -61,44 +63,36 @@ export default function PaginaInicio() {
 
       <section className="section__container about__container" id="about">
         <div className="about__image">
-          <img src={aboutImage} alt="about11" />
+          <img src={instalacion1} alt="about11" />
         </div>
         <div className="about__content">
           <p className="section__subheader">Acerca de Nosotros</p>
           <h2 className="section__header">
-            ¡Las Mejores Vacaciones Comienzan Aquí!
+          Nuestra Historia: Un Compromiso con la Rehabilitación
           </h2>
           <p className="section__description">
-            Con un enfoque en alojamientos de calidad, experiencias
-            personalizadas y reservas sin complicaciones, nuestra plataforma
-            está dedicada a asegurar que cada viajero comience sus vacaciones
-            soñadas con confianza y emoción.
+          El Patronato Nacional de Rehabilitación para el Inválido, con sede en Tegucigalpa, Honduras, es una institución emblemática fundada el 2 de abril de 1962, dedicada a la noble tarea de apoyar a personas con discapacidades físicas. Desde su creación, ha sido un pilar fundamental en la provisión de zapatos ortopédicos y prótesis, mejorando significativamente la calidad de vida de sus beneficiarios. A lo largo de los años, el Patronato ha evolucionado para adaptarse a las necesidades cambiantes de la comunidad a la que sirve, manteniendo siempre su compromiso con la excelencia y la innovación en el campo de la rehabilitación física. Su historia es un testimonio de la resiliencia y la dedicación, reflejando el espíritu de servicio y la solidaridad que caracteriza a la sociedad hondureña.
           </p>
         </div>
         <div className="about__content">
           <p className="section__subheader">Misión</p>
           <h2 className="section__header">
-            ¡Las Mejores Vacaciones Comienzan Aquí!
+          Comprometidos con la Inclusión y la Rehabilitación
           </h2>
           <p className="section__description">
-            Con un enfoque en alojamientos de calidad, experiencias
-            personalizadas y reservas sin complicaciones, nuestra plataforma
-            está dedicada a asegurar que cada viajero comience sus vacaciones
-            soñadas con confianza y emoción.
+          Somos una institución sin fines de lucro en el campo de la rehabilitación
+          integral para las personas con discapacidad física ofreciéndole servicios y productos para mejorar su proceso de rehabilitación.
           </p>
           <p className="section__subheader">Visión</p>
           <h2 className="section__header">
-            ¡Las Mejores Vacaciones Comienzan Aquí!
+          Liderando el Camino hacia una Rehabilitación Accesible y Equitativa
           </h2>
           <p className="section__description">
-            Con un enfoque en alojamientos de calidad, experiencias
-            personalizadas y reservas sin complicaciones, nuestra plataforma
-            está dedicada a asegurar que cada viajero comience sus vacaciones
-            soñadas con confianza y emoción.
+          Ser una institución de rehabilitación integral física ofreciendo servicios y productos de alta calidad accesibles equitativos y centrados mediante la necesidad de cada persona con discapacidad
           </p>
         </div>
         <div className="about__image">
-          <img src={aboutImage} alt="about" />
+          <img src={instalacion6} alt="about" />
         </div>
       </section>
 

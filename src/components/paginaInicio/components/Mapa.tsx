@@ -11,7 +11,7 @@ L.Icon.Default.mergeOptions({
 });
 
 export default function Mapa() {
-    const position = [40.7128, -74.0060];
+    const position = [14.105784453360968, -87.18579582328306];
   return (
     <>
     <MapContainer center={position} zoom={13} style={{ height: '400px', width: '100%' }}>
@@ -21,7 +21,7 @@ export default function Mapa() {
       />
       <Marker position={position}>
         <Popup>
-          ¡Bienvenido a nuestra tienda!
+          ¡Bienvenido!
         </Popup>
       </Marker>
     </MapContainer>
