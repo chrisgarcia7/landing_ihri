@@ -1,23 +1,17 @@
 import React, {  useEffect, useState } from 'react';
-import aboutImage from './assets/about.jpg';
-import exploreImage from './assets/explore.jpg';
-import facebook from './assets/facebook.png';
-import instagram from './assets/instagram.png';
-import room1Image from './assets/room-1.jpg';
+import ScrollReveal from 'scrollreveal';
 import room2Image from './assets/room-2.jpg';
 import room3Image from './assets/room-3.jpg';
-import serviceImage from './assets/service.jpg';
-import twitter from './assets/twitter.png';
-import youtube from './assets/youtube.png';
 import instalacion1 from './assets/instalacion1.jpg'
 import instalacion6 from './assets/instalacion6.jpg'
 
-import ScrollReveal from 'scrollreveal';
 import './styles.css';
+
 import Mapa from '../paginaInicio/components/Mapa.tsx';
 import LoginModal from '../modal/LoginModal.tsx';
 import CardProductos from '../CardProductos/CardProductos.tsx';
 import Navbar from '../../globalComponents/navbar.tsx';
+import Footer from '../../globalComponents/Footer.tsx';
 
 export default function PaginaInicio() {
   
@@ -49,7 +43,7 @@ export default function PaginaInicio() {
   }, []);
 
   return (
-    <>
+    <div className='main-content'>
       <header className="header">
        <Navbar handleOpenModal={handleOpenModal}></Navbar>
         <div className="section__container header__container" id="home">
@@ -148,66 +142,10 @@ export default function PaginaInicio() {
         </div>
       </section>
 
-      <footer className="footer" id="contact">
-        <div className="section__container footer__container">
-          <div className="footer__col">
-            <div className="logo">
-              <a href="#home">
-                <img src="#" alt="logo" />
-              </a>
-            </div>
-            <p className="section__description">
-              Discover a world of comfort, luxury, and adventure as you explore
-              our curated selection of hotels, making every moment of your
-              getaway truly extraordinary.
-            </p>
-            <button className="btn">Book Now</button>
-          </div>
-          <div className="footer__col">
-            <h4>Otros Servicios</h4>
-            <ul className="footer__links">
-              <li>
-                <a href="#">Concierge Assistance</a>
-              </li>
-              <li>
-                <a href="#">Flexible Booking Options</a>
-              </li>
-              <li>
-                <a href="#">Airport Transfers</a>
-              </li>
-              <li>
-                <a href="#">Wellness & Recreation</a>
-              </li>
-            </ul>
-          </div>
-          <div className="footer__col">
-            <h4>Contáctanos</h4>
-            <ul className="footer__links">
-              <li>
-                <a href="#">####</a>
-              </li>
-            </ul>
-            <div className="footer__socials">
-              <a href="#">
-                <img src={facebook} alt="facebook" />
-              </a>
-              <a href="#">
-                <img src={instagram} alt="instagram" />
-              </a>
-              <a href="#">
-                <img src={youtube} alt="youtube" />
-              </a>
-              <a href="#">
-                <img src={twitter} alt="twitter" />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="footer__bar">Copyright © 2025</div>
-      </footer>
+    <Footer></Footer>
 
       {/* Modal de Login */}
       <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
-    </>
+    </div>
   );
 }
