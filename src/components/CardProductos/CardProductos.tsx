@@ -44,35 +44,36 @@ import producto41 from './assets/producto41.jpg';
 import producto42 from './assets/producto42.jpg';
 
 
-export default function CardProductos() {
+
+export default function CardProductos({producto}) {
   return (
-    <div className="container mt-5">
-      <div id="carouselExample" className="carousel slide" data-ride="carousel">
-        <div className="carousel-inner">
-          {productos.map((producto, index) => (
-            <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={producto.idProducto}>
-              <div className="row">
-                <div className="col">
-                  <div className="card">
-                    <img src={producto.imagen} className="card-img-top" alt={producto.titulo} />
-                    <div className="card-body">
-                      <h5 className="card-title">{producto.titulo}</h5>
+    <div className="room__card">
+                <div className="room__card__image">
+                <div id={`carouselExample${producto.idProducto}`} className="carousel slide">
+                    <div className="carousel-inner">
+
+                                {producto.imagen.map((img, index) => (
+                          <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
+                            <img src={img} className="d-block w-100" alt={producto.titulo} />
+                          </div>
+                        ))}
+                                  
                     </div>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span className="visually-hidden">Next</span>
+                    </button>
                   </div>
                 </div>
-                {/* Puedes agregar más columnas para más productos en cada slide */}
+                <div className="room__card__details">
+                  <h4>{producto.titulo}</h4>
+                  {producto.subtitulo && <h5>{producto.subtitulo}</h5>}
+                  <button className="btn">Conoce más</button>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-        <a className="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a className="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
-        <button className="btn">Conoce más</button>
-      </div>
-    </div>
   )
 }

@@ -229,42 +229,9 @@ export default function PaginaInicio() {
         <p className="section__subheader">Productos</p>
         <h2 className="section__header">Productos que manejamos.</h2>
         <div className="room__grid">
-          <div className="room__card">
-
-
-          </div>
-          <div className="room__card">
-            <div className="room__card__image">
-              <img src={room2Image} alt="room" />
-            </div>
-            <div className="room__card__details">
-              <h4>Executive Cityscape Room</h4>
-              <p>
-                Experience urban elegance and modern comfort in the heart of the
-                city.
-              </p>
-              <h5>
-                Starting from <span>$199/night</span>
-              </h5>
-              <button className="btn">Conoce más</button>
-            </div>
-          </div>
-          <div className="room__card">
-            <div className="room__card__image">
-              <img src={room3Image} alt="room" />
-            </div>
-            <div className="room__card__details">
-              <h4>Family Garden Retreat</h4>
-              <p>
-                Spacious and inviting, perfect for creating cherished memories
-                with loved ones.
-              </p>
-              <h5>
-                Starting from <span>$249/night</span>
-              </h5>
-              <button className="btn">Conoce más</button>
-            </div>
-          </div>
+        {productos.map((producto) => (
+            <CardProductos key={producto.idProducto} producto={producto} />
+          ))}
         </div>
       </section>
 
