@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import producto1 from './assets/producto1.jpg'
 import { Producto } from '../../Modelos/producto'
+import producto1 from './assets/producto1.jpg'
 import producto2 from './assets/producto2.jpg'
 import producto3 from './assets/producto3.jpg'
 import producto4 from './assets/producto4.jpg';
@@ -45,24 +45,6 @@ import producto42 from './assets/producto42.jpg';
 
 
 export default function CardProductos() {
-    const [productos, setProductos]=useState<Producto[]>([
-      {
-          idProducto: 1,
-          imagen: producto1,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 2,
-          imagen: producto2,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      {
-          idProducto: 3,
-          imagen: producto3,
-          titulo: 'Zapatos que se le colocado Alza por acortamiento en miembro inferior',
-      },
-      
-  ])
   return (
     <div className="container mt-5">
       <div id="carouselExample" className="carousel slide" data-ride="carousel">
