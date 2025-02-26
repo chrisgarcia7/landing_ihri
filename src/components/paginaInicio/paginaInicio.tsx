@@ -146,7 +146,7 @@ export default function PaginaInicio() {
       imagen: [producto42],
       titulo: 'Productos del Área de Ortesis y  prótesis ',
       subtitulo: 'Barra Dennis Brown '
-    }
+    },
 
   ])
   
@@ -232,7 +232,9 @@ export default function PaginaInicio() {
         {productos.map((producto) => (
             <CardProductos key={producto.idProducto} producto={producto} />
           ))}
+          
         </div>
+        
       </section>
 
       <section className="explore" id="explore">
