@@ -1,0 +1,21 @@
+
+
+.carrusel > .carousel-menu{
+    width: 800px;
+    height: 500px;
+    object-fit: cover;
+    bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(1, 1, 1, 1);
+    border-radius: 10px;
+}
+
+.menu {
+    background-image: url('../../paginaInicio/assets/instalacion10.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-item-menu > .imagen-del-carrusel{
+   max-width: 800px;
+   height: 500px;
+}
