@@ -14,6 +14,8 @@ import useProductos from './components/useProductos.tsx';
 
 export default function PaginaInicio() {
 
+  const productos = useProductos()
+
   
    const [isModalOpen, setIsModalOpen] = useState(false); 
   
@@ -97,9 +99,7 @@ export default function PaginaInicio() {
         {productos.map((producto) => (
             <CardProductos key={producto.idProducto} producto={producto} />
           ))}
-          
         </div>
-        
       </section>
 
       <section className="explore" id="explore">
