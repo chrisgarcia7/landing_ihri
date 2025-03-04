@@ -57,7 +57,7 @@ const menuBtnRef = useRef(null);
         <a href="#service">Catálogo</a>
       </li>
       <li className='links'>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Contacto</a>
       </li>
     </ul>
     <button className="btn nav__btn" onClick={handleOpenModal}>

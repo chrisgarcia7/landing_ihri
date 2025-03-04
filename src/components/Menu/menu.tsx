@@ -17,9 +17,8 @@ const Menu = () => {
       <div className='menu' style={{ justifyItems: 'center', padding: '20px' }}>
         <Navbar handleOpenModal={setModal}></Navbar>
         <Carrousel></Carrousel>
-        <Footer></Footer>
       </div>
-
+      <Footer></Footer>
     </>
 
   )

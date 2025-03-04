@@ -6,7 +6,7 @@ export default function CardProductos({ producto }) {
   return (
     <div className="room__card">
       <div className="room__card__image">
-        <div id={`carouselExample${producto.idProducto}`} className="carousel slide">
+        <div id={`carouselExample${producto.idProducto}`} className="carousel slide" style={{ marginBottom: '-60%' }}>
           <div className="carousel-inner">
             {producto.imagen.map((img, index) => (
               <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
