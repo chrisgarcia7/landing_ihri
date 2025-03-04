@@ -316,7 +316,7 @@ nav {
 }
 
 .room__card__details {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .room__card h4 {
@@ -629,3 +629,4 @@ nav {
     gap: 2rem;
   }
 }
+
