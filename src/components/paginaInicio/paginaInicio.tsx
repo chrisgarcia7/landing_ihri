@@ -4,6 +4,7 @@ import instalacion1 from './assets/instalacion1.jpg'
 import instalacion6 from './assets/instalacion6.jpg'
 
 import './styles.css';
+import '../modal/LoginModal.css'
 
 import Mapa from '../paginaInicio/components/Mapa.tsx';
 import LoginModal from '../modal/LoginModal.tsx';
@@ -11,8 +12,10 @@ import CardProductos from '../CardProductos/CardProductos.tsx';
 import Navbar from '../../globalComponents/navbar.tsx';
 import Footer from '../../globalComponents/Footer.tsx';
 import useProductos from './components/useProductos.tsx';
+import { useContextPage } from '../../Context/Provider.tsx';
 
 export default function PaginaInicio() {
+  const {usuario, correo}= useContextPage()
 
   const productos = useProductos()
 

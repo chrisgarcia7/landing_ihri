@@ -104,3 +104,8 @@
   background: #b0c4de !important; 
   cursor: not-allowed;
 }
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
