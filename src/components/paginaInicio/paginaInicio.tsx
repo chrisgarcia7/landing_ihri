@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ScrollReveal from 'scrollreveal';
 import instalacion1 from './assets/instalacion1.jpg'
 import instalacion6 from './assets/instalacion6.jpg'
@@ -11,24 +11,20 @@ import LoginModal from '../modal/LoginModal.tsx';
 import CardProductos from '../CardProductos/CardProductos.tsx';
 import Navbar from '../../globalComponents/navbar.tsx';
 import Footer from '../../globalComponents/Footer.tsx';
-import useProductos from './components/useProductos.tsx';
 import { useContextPage } from '../../Context/Provider.tsx';
 
 export default function PaginaInicio() {
-  const {usuario, correo}= useContextPage()
+  const { usuario, correo } = useContextPage();
 
-  const productos = useProductos()
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  
-   const [isModalOpen, setIsModalOpen] = useState(false); 
-  
-    const handleOpenModal = () => {
-      setIsModalOpen(true);
-    };
-  
-    const handleCloseModal = () => {
-      setIsModalOpen(false);
-    };
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
 
   useEffect(() => {
@@ -50,7 +46,7 @@ export default function PaginaInicio() {
   return (
     <div className='main-content'>
       <header className="header">
-       <Navbar handleOpenModal={handleOpenModal}></Navbar>
+        <Navbar handleOpenModal={handleOpenModal}></Navbar>
         <div className="section__container header__container" id="home">
           <p>Simple - Único - amigable</p>
           <h1>
@@ -67,27 +63,27 @@ export default function PaginaInicio() {
         <div className="about__content">
           <p className="section__subheader">Acerca de Nosotros</p>
           <h2 className="section__header">
-          Nuestra Historia: Un Compromiso con la Rehabilitación
+            Nuestra Historia: Un Compromiso con la Rehabilitación
           </h2>
           <p className="section__description">
-          El Patronato Nacional de Rehabilitación para el Inválido, con sede en Tegucigalpa, Honduras, es una institución emblemática fundada el 2 de abril de 1962, dedicada a la noble tarea de apoyar a personas con discapacidades físicas. Desde su creación, ha sido un pilar fundamental en la provisión de zapatos ortopédicos y prótesis, mejorando significativamente la calidad de vida de sus beneficiarios. A lo largo de los años, el Patronato ha evolucionado para adaptarse a las necesidades cambiantes de la comunidad a la que sirve, manteniendo siempre su compromiso con la excelencia y la innovación en el campo de la rehabilitación física. Su historia es un testimonio de la resiliencia y la dedicación, reflejando el espíritu de servicio y la solidaridad que caracteriza a la sociedad hondureña.
+            El Patronato Nacional de Rehabilitación para el Inválido, con sede en Tegucigalpa, Honduras, es una institución emblemática fundada el 2 de abril de 1962, dedicada a la noble tarea de apoyar a personas con discapacidades físicas. Desde su creación, ha sido un pilar fundamental en la provisión de zapatos ortopédicos y prótesis, mejorando significativamente la calidad de vida de sus beneficiarios. A lo largo de los años, el Patronato ha evolucionado para adaptarse a las necesidades cambiantes de la comunidad a la que sirve, manteniendo siempre su compromiso con la excelencia y la innovación en el campo de la rehabilitación física. Su historia es un testimonio de la resiliencia y la dedicación, reflejando el espíritu de servicio y la solidaridad que caracteriza a la sociedad hondureña.
           </p>
         </div>
         <div className="about__content">
           <p className="section__subheader">Misión</p>
           <h2 className="section__header">
-          Comprometidos con la Inclusión y la Rehabilitación
+            Comprometidos con la Inclusión y la Rehabilitación
           </h2>
           <p className="section__description">
-          Somos una institución sin fines de lucro en el campo de la rehabilitación
-          integral para las personas con discapacidad física ofreciéndole servicios y productos para mejorar su proceso de rehabilitación.
+            Somos una institución sin fines de lucro en el campo de la rehabilitación
+            integral para las personas con discapacidad física ofreciéndole servicios y productos para mejorar su proceso de rehabilitación.
           </p>
           <p className="section__subheader">Visión</p>
           <h2 className="section__header">
-          Liderando el Camino hacia una Rehabilitación Accesible y Equitativa
+            Liderando el Camino hacia una Rehabilitación Accesible y Equitativa
           </h2>
           <p className="section__description">
-          Ser una institución de rehabilitación integral física ofreciendo servicios y productos de alta calidad accesibles equitativos y centrados mediante la necesidad de cada persona con discapacidad
+            Ser una institución de rehabilitación integral física ofreciendo servicios y productos de alta calidad accesibles equitativos y centrados mediante la necesidad de cada persona con discapacidad
           </p>
         </div>
         <div className="about__image">
@@ -99,9 +95,9 @@ export default function PaginaInicio() {
         <p className="section__subheader">Productos</p>
         <h2 className="section__header">Productos que manejamos.</h2>
         <div className="room__grid">
-        {productos.map((producto) => (
-            <CardProductos key={producto.idProducto} producto={producto} />
-          ))}
+
+          <CardProductos />
+
         </div>
       </section>
 
@@ -115,7 +111,7 @@ export default function PaginaInicio() {
         </div>
       </section>
 
-    <Footer></Footer>
+      <Footer></Footer>
 
       {/* Modal de Login */}
       <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
