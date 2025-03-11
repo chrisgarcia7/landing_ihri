@@ -277,7 +277,8 @@ nav {
 
 .room__card__image {
   position: relative;
-  isolation: isolate;
+  overflow: hidden;
+  z-index: 0;
 }
 
 .room__card__icons {
