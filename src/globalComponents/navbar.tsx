@@ -1,6 +1,7 @@
 
 import React, {useRef, useEffect} from 'react'
 import '../components/paginaInicio/styles.css';
+import logo from '../components/paginaInicio/assets/logo.png'
 
 
 const Navbar = ({handleOpenModal}) => {
@@ -39,7 +40,7 @@ const menuBtnRef = useRef(null);
     <div className="nav__bar">
       <div className="logo">
         <a href="#">
-          <img src="#" alt="logo" />
+          <img src={logo} alt="logo" />
         </a>
       </div>
       <div className="nav__menu__btn" ref={menuBtnRef}>
@@ -60,7 +61,7 @@ const menuBtnRef = useRef(null);
         <a href="#contact">Contacto</a>
       </li>
     </ul>
-    <button className="btn nav__btn" onClick={handleOpenModal}>
+    <button className="btn nav__btn" style={{color: "white"}} onClick={handleOpenModal}>
       Usuario
     </button>
   </nav>

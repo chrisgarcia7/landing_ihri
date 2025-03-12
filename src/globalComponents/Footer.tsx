@@ -1,8 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import facebook from '../components/paginaInicio/assets/facebook.png'
-import instagram from '../components/paginaInicio/assets/instagram.png';
-import twitter from '../components/paginaInicio/assets/twitter.png';
-import youtube from '../components/paginaInicio/assets/youtube.png';
+import logo from '../components/paginaInicio/assets/logo.png'
+
 
 import '../components/paginaInicio/styles.css';
 
@@ -14,30 +14,24 @@ const Footer = () => {
                     <div className="footer__col">
                         <div className="logo">
                             <a href="#home">
-                                <img src="#" alt="logo" />
+                                <img src={logo} alt="logo" />
                             </a>
                         </div>
-                        <p className="section__description">
-                            Discover a world of comfort, luxury, and adventure as you explore
-                            our curated selection of hotels, making every moment of your
-                            getaway truly extraordinary.
-                        </p>
-                        <button className="btn">Book Now</button>
                     </div>
                     <div className="footer__col">
                         <h4>Otros Servicios</h4>
                         <ul className="footer__links">
                             <li>
-                                <a href="#">Concierge Assistance</a>
+                                <a href="#header">Inicio</a>
                             </li>
                             <li>
-                                <a href="#">Flexible Booking Options</a>
+                                <a href="#about">Sobre Nosotros</a>
                             </li>
                             <li>
-                                <a href="#">Airport Transfers</a>
+                                <a href="#service">Nuestros Productos</a>
                             </li>
                             <li>
-                                <a href="#">Wellness & Recreation</a>
+                                <a href="#explore">Ubicacion</a>
                             </li>
                         </ul>
                     </div>
@@ -45,22 +39,20 @@ const Footer = () => {
                         <h4>Contáctanos</h4>
                         <ul className="footer__links">
                             <li>
-                                <a href="#">####</a>
+                                <a href="tel:+50495576500">+504 9557-6500</a>
+                            </li>
+                            <li>
+                                <a href="tel:+50422366909">+504 2236-6909</a>
+                            </li>
+                           
+                            <li>
+                                <a href="mailto:patronatonacionalr@yahoo.com">patronatonacionalr@yahoo.com</a>
                             </li>
                         </ul>
                         <div className="footer__socials">
-                            <a href="#">
+                            <Link to={"https://www.facebook.com/glen.ihri.7/"}>
                                 <img src={facebook} alt="facebook" />
-                            </a>
-                            <a href="#">
-                                <img src={instagram} alt="instagram" />
-                            </a>
-                            <a href="#">
-                                <img src={youtube} alt="youtube" />
-                            </a>
-                            <a href="#">
-                                <img src={twitter} alt="twitter" />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

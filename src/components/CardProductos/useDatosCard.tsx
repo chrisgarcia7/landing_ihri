@@ -14,7 +14,6 @@ const productosArray : Producto[] = query.docs.map(doc => {
     const data = doc.data() as Producto;
     return {... data, idProducto: doc.id}
 })
-
 setProductos(productosArray);
 }
 

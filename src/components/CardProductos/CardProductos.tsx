@@ -14,7 +14,7 @@ export default function CardProductos() {
     const texto = "Hola! Estoy interesado en este producto"
     const enlace = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`
 
-    window.open(`${enlace}${imagenUrl}`, "_blank");
+    window.open(`${enlace} ${imagenUrl}`, "_blank");
   }
   
 
