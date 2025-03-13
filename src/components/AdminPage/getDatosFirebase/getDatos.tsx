@@ -1,6 +1,6 @@
 import { getFirestore, collection, getDocs,  } from 'firebase/firestore'
-import React, {useEffect, useState } from 'react'
-import { Producto } from '../../Modelos/producto';
+import React, { useState } from 'react'
+import { Producto } from '../../../Modelos/producto';
 
 const db = getFirestore();
 

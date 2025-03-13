@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Producto } from "../../Modelos/producto";
-import useDatosCard from "./useDatosCard.tsx";
+import useDatosCard from "../AdminPage/getDatosFirebase/getDatos.tsx";
 
 export default function CardProductos() {
   const { obtenerProductos, productos } = useDatosCard();
