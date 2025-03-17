@@ -85,8 +85,8 @@
   background: #007bff !important; 
   color: white !important;
   margin-top: 10px;
-  width: 25%;
-  padding: 12px;
+  width: 50%;
+  padding: 12%;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -107,4 +107,33 @@
 .error-message {
   color: red;
   margin-top: 10px;
+}
+
+/**/
+
+.btn {
+  padding: 10px 15px !important;
+  border: none !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  font-weight: bold !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.menu-btn {
+  background-color: #007bff !important; /* Azul */
+  color: white !important;
+}
+
+.menu-btn:hover {
+  background-color: #0056b3 !important; /* Azul oscuro */
+}
+
+.logout-btn {
+  background-color: #dc3545 !important; /* Rojo */
+  color: white !important;
+}
+
+.logout-btn:hover {
+  background-color: #c82333 !important; /* Rojo oscuro */
 }

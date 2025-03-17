@@ -68,6 +68,12 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
         {user ? (
           <>
             <h2>Bienvenido, {user.email}</h2>
+            <button className="btn menu-btn">
+            <a href="/menu" style={{ color: 'white', textDecoration: 'none' }}>
+                Menu
+              </a>
+            </button>
+            <br></br>
             <button className="btn logout-btn" onClick={handleLogout}>
               Cerrar Sesión
             </button>
