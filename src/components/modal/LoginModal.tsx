@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./LoginModal.css";
+import styles from "./LoginModal.module.css";
 import { auth } from "../../firebase/firebaseConfig.ts";
 import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 import { useContextPage } from "../../Context/Provider.tsx";
@@ -63,27 +63,27 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className={`modal-overlay ${isOpen ? "active" : ""}`} onClick={handleClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+    <div className={`${styles.modalOverlay} ${ isOpen ? styles.active : ""}`} onClick={handleClose}>
+      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         {user ? (
           <>
             <h2>Bienvenido, {user.email}</h2>
-            <button className="btn menu-btn">
+            <button className={`${styles.btn} ${styles.menuBtn}`}>
             <a href="/menu" style={{ color: 'white', textDecoration: 'none' }}>
                 Menu
               </a>
             </button>
             <br></br>
-            <button className="btn logout-btn" onClick={handleLogout}>
+            <button className={`${styles.btn} ${styles.logoutBtn}`} onClick={handleLogout}>
               Cerrar Sesión
             </button>
           </>
         ) : (
           <>
             <h2>Iniciar Sesión</h2>
-            {error && <p className="error-message">{error}</p>}
+            {error && <p className={styles.errorMessage}>{error}</p>}
             <form>
-              <div className="form-group">
+              <div className={styles.formGroup}>
                 <label htmlFor="email">Correo electrónico</label>
                 <input
                   type="email"
@@ -94,7 +94,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
                   required
                 />
               </div>
-              <div className="form-group">
+              <div className={styles.formGroup}>
                 <label htmlFor="password">Contraseña</label>
                 <input
                   type="password"
@@ -107,7 +107,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
               </div>
               <button
                 type="button"
-                className="btn login-btn"
+                className={`${styles.btn} ${styles.loginBtn}`}
                 onClick={handleLogin}
                 disabled={!isFormValid}
               >
@@ -116,7 +116,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
             </form>
           </>
         )}
-        <button className="btn close-btn" onClick={handleClose}>Cerrar</button>
+        <button className={`${styles.btn} ${styles.closeBtn}`} onClick={handleClose}>Cerrar</button>
       </div>
     </div>
   );

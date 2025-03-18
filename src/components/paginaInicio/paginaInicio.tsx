@@ -4,7 +4,7 @@ import instalacion1 from './assets/instalacion1.jpg'
 import instalacion6 from './assets/instalacion6.jpg'
 
 import './styles.css';
-import '../modal/LoginModal.css'
+import '../modal/LoginModal.module.css'
 
 import Mapa from '../paginaInicio/components/Mapa.tsx';
 import LoginModal from '../modal/LoginModal.tsx';
@@ -20,6 +20,7 @@ export default function PaginaInicio() {
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
+    console.log(isModalOpen)
   };
 
   const handleCloseModal = () => {
