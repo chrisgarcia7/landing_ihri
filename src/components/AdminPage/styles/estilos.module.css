@@ -1,4 +1,4 @@
-.container-admin {
+.containerAdmin {
     display: flex;
     min-height: 100vh;
     justify-content: flex-start;
@@ -9,7 +9,7 @@
     background-position: center;
 }
 
-.bienvenida-admin {
+.bienvenidaAdmin {
     margin-top: 10px;
     padding: 10px;
     font-family: "Poppins", sans-serif;
@@ -20,7 +20,7 @@
     margin-bottom: 10px;
 }
 
-.table-admin {
+.tableAdmin {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,4 +46,20 @@
     border: 1px solid black;
     text-align: left;
     white-space: nowrap;
+}
+
+.noneProductos{
+    font-family: "Poppins", sans-serif;
+    color: white;
+}
+
+.btnAdd{
+    align-self: center;
+    justify-items: center;
+}
+
+.imagenPrevia {
+    max-width: 100%;
+    height: auto;
+    width: 350px;
 }

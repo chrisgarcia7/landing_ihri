@@ -69,8 +69,8 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
           <>
             <h2>Bienvenido, {user.email}</h2>
             <button className="btn menu-btn">
-            <a href="/menu" style={{ color: 'white', textDecoration: 'none' }}>
-                Menu
+            <a href="/admin" style={{ color: 'white', textDecoration: 'none' }}>
+                Administrar Productos
               </a>
             </button>
             <br></br>

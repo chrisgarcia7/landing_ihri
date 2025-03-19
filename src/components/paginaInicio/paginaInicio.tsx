@@ -20,6 +20,7 @@ export default function PaginaInicio() {
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
+    console.log(isModalOpen)
   };
 
   const handleCloseModal = () => {

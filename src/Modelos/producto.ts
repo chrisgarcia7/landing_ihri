@@ -3,4 +3,5 @@ export interface Producto {
     imagen: string[],
     titulo: string,
     subtitulo: string,
+    
 }
