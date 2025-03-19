@@ -4,6 +4,10 @@ import { Button } from 'react-bootstrap'
 
 import ModalAdmin from './modalAdmin.tsx'
 import useDatosCard from './getDatosFirebase/getDatos.tsx'
+
+import { db } from '../../firebase/firebaseConfig.ts'
+import { doc, deleteDoc } from 'firebase/firestore'
+
 const AdminPage = () => {
 
     const { obtenerProductos, productos } = useDatosCard()
@@ -12,6 +16,19 @@ const AdminPage = () => {
     useEffect(() => {
         obtenerProductos()
     })
+
+    
+   const eliminarRegistro = async (id) => {
+    const confirmacion = window.confirm('Quieres eliminar este registro?');
+    if(!confirmacion) return
+
+    try {
+        await deleteDoc(doc(db, "productos", id));
+        alert('Producto eliminado con exito!');
+    } catch (error) {
+        alert("Error al eliminar el producto!")
+    }
+}
 
 
 
@@ -50,7 +67,7 @@ const AdminPage = () => {
                                     </th>
                                     <th>
                                         <Button variant='warning' style={{ margin: '10px' }}>Editar</Button>
-                                        <Button variant='danger'>Eliminar</Button>
+                                        <Button variant='danger' onClick={() => eliminarRegistro(producto.idProducto)}>Eliminar</Button>
                                     </th>
                                 </tr>
                             ))}
