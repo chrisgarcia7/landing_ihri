@@ -4,6 +4,7 @@ import styles from './styles/estilos.module.css'
 
 import { db } from '../../firebase/firebaseConfig.ts'
 import { collection, addDoc } from 'firebase/firestore'
+import useDatosCard from "./getDatosFirebase/getDatos.tsx"
 
 
 const ModalAdmin = () => {
@@ -14,30 +15,11 @@ const ModalAdmin = () => {
   const [subtitulo, setSubtitulo] = useState('');
   const [subiendo, setSubiendo] = useState(false);
 
+  const {uploadImages1} = useDatosCard();
+
   const manejarCambioImagenes = (e) => {
     const archivos = Array.from(e.target.files);
     setImagenes(archivos);
-  };
-
-  const uploadImages = async (imagen) => {
-    const formData = new FormData();
-    
-    formData.append("file", imagen);
-    formData.append("upload_preset", "ml_default");
-
-    const response = await fetch("https://api.cloudinary.com/v1_1/dhc30dpax/image/upload", {
-      method: "POST",
-      body: formData
-    });
-
-    if (!response.ok) {
-      throw new Error(`Error en Cloudinary: ${response.statusText}`);
-    }
-
-
-    const data = await response.json();
-    return data.secure_url
-
   };
 
    const enviarFirestore = async () => {
@@ -49,7 +31,7 @@ const ModalAdmin = () => {
     setSubiendo(true);
 
     try {
-      const urlImagenes = await Promise.all(imagenes.map(uploadImages));
+      const urlImagenes = await Promise.all(imagenes.map(uploadImages1));
 
       console.log(urlImagenes)
 

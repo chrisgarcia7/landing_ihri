@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap'
 
 import ModalAdmin from './modalAdmin.tsx'
 import useDatosCard from './getDatosFirebase/getDatos.tsx'
+import EditAdmin from './editAdmin.tsx'
 
 import { db } from '../../firebase/firebaseConfig.ts'
 import { doc, deleteDoc } from 'firebase/firestore'
@@ -11,24 +12,34 @@ import { doc, deleteDoc } from 'firebase/firestore'
 const AdminPage = () => {
 
     const { obtenerProductos, productos } = useDatosCard()
-  
+    const [onDisabled, setOnDisabled] = useState(false);
+    const [onShow, setOnShow] = useState(false);
+    const [productoEdit, setProductoEdit] = useState({});
+
 
     useEffect(() => {
         obtenerProductos()
     })
 
-    
-   const eliminarRegistro = async (id) => {
-    const confirmacion = window.confirm('Quieres eliminar este registro?');
-    if(!confirmacion) return
-
-    try {
-        await deleteDoc(doc(db, "productos", id));
-        alert('Producto eliminado con exito!');
-    } catch (error) {
-        alert("Error al eliminar el producto!")
+    const Editproducto = (producto) => {
+        setOnDisabled(true);
+        setOnShow(true);
+        console.log(producto)
+        setProductoEdit(producto)
     }
-}
+
+
+    const eliminarRegistro = async (id) => {
+        const confirmacion = window.confirm('Quieres eliminar este registro?');
+        if (!confirmacion) return
+
+        try {
+            await deleteDoc(doc(db, "productos", id));
+            alert('Producto eliminado con exito!');
+        } catch (error) {
+            alert("Error al eliminar el producto!")
+        }
+    }
 
 
 
@@ -40,7 +51,9 @@ const AdminPage = () => {
                 </div>
             </section>
 
-           <ModalAdmin></ModalAdmin>
+            <ModalAdmin></ModalAdmin>
+            <EditAdmin onShow={onShow} productoEdit={productoEdit}></EditAdmin>
+
 
             <section className={styles.tableAdmin}>
                 {productos.length === 0 ?
@@ -66,7 +79,7 @@ const AdminPage = () => {
                                         <img src={producto.imagen[0]} alt={producto.titulo} width={50} height={50} />
                                     </th>
                                     <th>
-                                        <Button variant='warning' style={{ margin: '10px' }}>Editar</Button>
+                                        <Button variant='warning' onClick={() => Editproducto(producto)} style={{ margin: '10px' }}>Editar</Button>
                                         <Button variant='danger' onClick={() => eliminarRegistro(producto.idProducto)}>Eliminar</Button>
                                     </th>
                                 </tr>
