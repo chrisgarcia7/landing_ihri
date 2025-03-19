@@ -7,10 +7,7 @@ import useDatosCard from './getDatosFirebase/getDatos.tsx'
 const AdminPage = () => {
 
     const { obtenerProductos, productos } = useDatosCard()
-    const [show, setShow] = useState(false);
-
-    const closeModal = () => setShow(false);
-    const openModal = () => setShow(true);
+  
 
     useEffect(() => {
         obtenerProductos()
@@ -22,11 +19,11 @@ const AdminPage = () => {
         <div className={styles.containerAdmin}>
             <section>
                 <div className='container-bienvenida'>
-                    <h1 className={styles.bienvenidaAdmin} onClick={openModal}>Bienvenido Administrador</h1>
+                    <h1 className={styles.bienvenidaAdmin}>Bienvenido Administrador</h1>
                 </div>
             </section>
 
-            <Button variant='success' className={styles.btnAdd} onClick={openModal}>Agregar nueva mercancia</Button>
+           <ModalAdmin></ModalAdmin>
 
             <section className={styles.tableAdmin}>
                 {productos.length === 0 ?
@@ -60,9 +57,7 @@ const AdminPage = () => {
                         </tbody>
                     </table>
                 }
-                <ModalAdmin open={show} close={closeModal}></ModalAdmin>
             </section>
-
         </div>
     )
 }
