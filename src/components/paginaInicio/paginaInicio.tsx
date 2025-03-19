@@ -45,12 +45,13 @@ export default function PaginaInicio() {
 
   return (
     <div className='main-content'>
+      
       <header className="header" id='header'>
-        <Navbar handleOpenModal={handleOpenModal}></Navbar>
+      <Navbar handleOpenModal={handleOpenModal}></Navbar>
         <div className="section__container header__container" id="home">
           <p>Patronato Nacional para Rehabilitación del Inválido</p>
           <h1>
-            Servicios de personas con discapacidad
+            Servicios a personas con discapacidad
             <br />
           </h1>
         </div>
@@ -90,7 +91,7 @@ export default function PaginaInicio() {
             Nuestros Valores
           </h2>
           <p className="section__description">
-          Se basan en la excelencia, con el compromiso de ofrecer la más alta calidad en nuestros servicios y productos; en el respeto, reconociendo y aceptando la diversidad de las personas con discapacidad en la sociedad; en la empatía, entendiendo a cada una de las personas con discapacidad; y en la solidaridad, colaborando en la superación y mejora del estilo de vida de estas personas.
+            Se basan en la excelencia, con el compromiso de ofrecer la más alta calidad en nuestros servicios y productos; en el respeto, reconociendo y aceptando la diversidad de las personas con discapacidad en la sociedad; en la empatía, entendiendo a cada una de las personas con discapacidad; y en la solidaridad, colaborando en la superación y mejora del estilo de vida de estas personas.
           </p>
         </div>
         <div className="about__image">
@@ -101,7 +102,7 @@ export default function PaginaInicio() {
       <section className="section__container room__container" id="service">
         <p className="section__subheader">Productos</p>
         <h2 className="section__header">Productos que manejamos.</h2>
-        <div className="room__grid"> 
+        <div className="room__grid">
 
           <CardProductos />
 

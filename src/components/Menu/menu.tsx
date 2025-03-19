@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Carrousel from './components/carrousel.tsx';
-import Navbar from '../../globalComponents/navbar.tsx';
+import NavBar from '../../globalComponents/navbar.tsx';
 import Footer from '../../globalComponents/Footer.tsx'
 import '../paginaInicio/styles.css'
 const Menu = () => {
@@ -15,7 +15,7 @@ const Menu = () => {
     <>
 
       <div className='menu' style={{ justifyItems: 'center', padding: '20px' }}>
-        <Navbar handleOpenModal={setModal}></Navbar>
+        <NavBar handleOpenModal={setModal}></NavBar>
         <Carrousel></Carrousel>
       </div>
       <Footer></Footer>

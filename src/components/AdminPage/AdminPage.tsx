@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import './styles/estilos.css'
 import { Button } from 'react-bootstrap'
+import logo from '../paginaInicio/assets/logo.png'
 
 import useDatosCard from './getDatosFirebase/getDatos.tsx'
 
@@ -19,9 +20,11 @@ const AdminPage = () => {
                 <div className='container-bienvenida'>
                     <h1 className='bienvenida-admin'>Bienvenido Administrador</h1>
                 </div>
+                
             </section>
 
             <section className='table-admin'>
+            <Button variant='success' style={{alignSelf: 'center'}}>Agregar Mercancia Nueva</Button>
                 {productos.length === 0 ?  
                 <h1>No hay productos que mostrar!</h1>
                 :
