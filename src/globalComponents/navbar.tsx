@@ -37,55 +37,57 @@ const Navbar = ({ handleOpenModal }) => {
   }, []);
 
   return (
-    <nav className="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
-      <div className="container-fluid">
-      <div className="logo">
-          <a href="#">
-            <img src={logo} alt="logo" />
-          </a>
-        </div>
+    <div className='bg-dark'>
+      <nav className="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div className="container-fluid">
+          <div className="logo">
+            <a href="#">
+              <img src={logo} alt="logo" />
+            </a>
+          </div>
 
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link" href="#home" >
+                  Inicio
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#about">
+                  Acerca
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#service">
+                  Catálogo
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#contact">
+                  Contacto
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button className="btn nav__btn" onClick={handleOpenModal}>
+          Usuario
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link" href="#home" >
-                Inicio
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#about">
-                Acerca
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#service">
-                Catálogo
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#contact">
-                Contacto
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <button className="btn nav__btn" onClick={handleOpenModal}>
-        Usuario
-      </button>
 
-    </nav>
+      </nav>
+    </div>
   );
 };
 

@@ -15,6 +15,11 @@
   display: flex; 
 }
 
+.container{
+  display: flex;
+  width: 100%;
+}
+
 .modal-content {
   background: rgba(255, 255, 255, 0.98);
   padding: 650px;

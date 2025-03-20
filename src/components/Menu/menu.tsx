@@ -13,11 +13,8 @@ const Menu = () => {
 
   return (
     <>
-
-      <div className='menu' style={{ justifyItems: 'center', padding: '20px' }}>
-        <NavBar handleOpenModal={setModal}></NavBar>
-        <Carrousel></Carrousel>
-      </div>
+      <NavBar handleOpenModal={setModal}></NavBar>
+      <Carrousel></Carrousel>
       <Footer></Footer>
     </>
 

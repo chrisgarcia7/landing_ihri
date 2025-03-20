@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from './styles/estilos.module.css'
 import { Button } from 'react-bootstrap'
-import logo from '../paginaInicio/assets/logo.png'
 
 import ModalAdmin from './modalAdmin.tsx'
 import useDatosCard from './getDatosFirebase/getDatos.tsx'
@@ -78,7 +77,7 @@ const AdminPage = () => {
                                     <th>{producto.titulo}</th>
                                     <th>{!producto.subtitulo ? <p>No existe subtitulo!</p> : producto.subtitulo}</th>
                                     <th>
-                                        <img src={producto.imagen[0]} alt={producto.titulo} width={50} height={50} />
+                                        <img src={producto.imagen[0]} alt={producto.titulo} className={styles.imagenTabla} />
                                     </th>
                                     <th>
                                         <Button variant='warning' onClick={() => Editproducto(producto)} style={{ margin: '10px' }}>Editar</Button>

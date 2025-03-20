@@ -9,7 +9,7 @@ import instalacion4 from '../../paginaInicio/assets/instalacion4.jpg'
 const carrousel = () => {
   return (
     <div>
-      <Container fluid className='carrusel'>
+      <Container fluid className='carrusel menu'>
         <Carousel className='carousel-menu'>
           <Carousel.Item interval={4000} className='carousel-item-menu'>
             <img src={instalacion6} className='imagen-del-carrusel' />
