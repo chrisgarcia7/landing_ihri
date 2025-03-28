@@ -6,6 +6,8 @@ import logo from '../components/paginaInicio/assets/logo.png'
 
 import '../components/paginaInicio/styles.css';
 
+const isMenu = window.location.pathname === '/menu'
+
 const Footer = () => {
     return (
         <>
@@ -22,16 +24,16 @@ const Footer = () => {
                         <h4>Otros Servicios</h4>
                         <ul className="footer__links">
                             <li>
-                                <a href="#header">Inicio</a>
+                                <a href={isMenu ? '/' : "#header"}>Inicio</a>
                             </li>
                             <li>
-                                <a href="#about">Sobre Nosotros</a>
+                                <a href={isMenu ? '/' : "#about"}>Sobre Nosotros</a>
                             </li>
                             <li>
-                                <a href="#service">Nuestros Productos</a>
+                                <a href={isMenu ? '/' : "#service"}>Nuestros Productos</a>
                             </li>
                             <li>
-                                <a href="#explore">Ubicacion</a>
+                                <a href={isMenu ? '/' : "#explore"}>Ubicacion</a>
                             </li>
                         </ul>
                     </div>

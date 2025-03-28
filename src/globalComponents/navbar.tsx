@@ -36,12 +36,15 @@ const Navbar = ({ handleOpenModal }) => {
     };
   }, []);
 
+  const isMenu = window.location.pathname === '/menu';
+
+
   return (
     <div className='bg-dark'>
       <nav className="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
         <div className="container-fluid">
           <div className="logo">
-            <a href="#">
+            <a href="/menu">
               <img src={logo} alt="logo" />
             </a>
           </div>
@@ -60,22 +63,22 @@ const Navbar = ({ handleOpenModal }) => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="#home" >
+                <a className="nav-link" href={isMenu ? "/" : "#home"}>
                   Inicio
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#about">
+                <a className="nav-link" href={isMenu ? "/" : "#about"}>
                   Acerca
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#service">
+                <a className="nav-link" href={isMenu ? "/" : "#service"}>
                   Catálogo
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#contact">
+                <a className="nav-link" href={isMenu ? "/" : "#contact"}>
                   Contacto
                 </a>
               </li>

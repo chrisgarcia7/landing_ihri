@@ -4,13 +4,14 @@ import styles from './styles/estilos.module.css'
 
 import useDatosCard from './getDatosFirebase/getDatos.tsx'
 
-const EditAdmin = ({ onShow = false, productoEdit }) => {
+const EditAdmin = ({ onShow = false, productoEdit, setOnShow }) => {
 
   const [titulo, setTitulo] = useState('')
   const [subtitulo, setSubtitulo] = useState('')
   const [imagenes, setImagenes] = useState([])
   const [idProducto, setIdProducto] = useState('')
-  const [show, setShow] = useState(onShow);
+  const [subiendo, setSubiendo] = useState(false);
+
 
   const { actualizarProducto } = useDatosCard();
 
@@ -30,12 +31,16 @@ const EditAdmin = ({ onShow = false, productoEdit }) => {
   };
 
   const guardarCambios = () => {
+    setSubiendo(true);
     actualizarProducto(idProducto, titulo, subtitulo, imagenes);
     setIdProducto('');
     setImagenes([]);
     setTitulo('');
     setSubtitulo('');
+    setSubiendo(false)
     }
+
+    
 
   return (
     <div>
@@ -62,8 +67,8 @@ const EditAdmin = ({ onShow = false, productoEdit }) => {
                 <p>No hay imágenes seleccionadas</p>
               )}
             </div>
-            <Button variant='warning' className='mt-2 col-12' onClick={guardarCambios} >Guardar</Button>
-            <Button variant='danger' className='mt-2 col-12' onClick={() => setShow(!onShow)}>Cerrar</Button>
+            <Button variant='warning' disabled={subiendo} className='mt-2 col-12' onClick={guardarCambios} >{subiendo ? "Cargando..." : "Guardar Cambios"}</Button>
+            <Button variant='danger' className='mt-2 col-12' onClick={() => {setOnShow(false)}}>Cerrar</Button>
           </div>
         </div>
       )}

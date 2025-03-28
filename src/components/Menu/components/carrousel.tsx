@@ -1,5 +1,5 @@
 import React from 'react'
-import { Carousel, Container } from 'react-bootstrap'
+import { Carousel, Container, Button } from 'react-bootstrap'
 import '../estilos/estilos.css'
 
 import instalacion6 from '../../paginaInicio/assets/instalacion6.jpg'
@@ -14,24 +14,20 @@ const carrousel = () => {
           <Carousel.Item interval={4000} className='carousel-item-menu'>
             <img src={instalacion6} className='imagen-del-carrusel' />
             <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h3>Patronato Nacional para Rehabilitación del Inválido</h3>
+              <h3>Desde 1962</h3>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={4000} className='carousel-item-menu'>
             <img src={instalacion5} className='imagen-del-carrusel' />
             <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={4000} className='carousel-item-menu'>
             <img src={instalacion4} className='imagen-del-carrusel' />
             <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
+            
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

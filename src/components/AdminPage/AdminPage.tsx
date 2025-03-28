@@ -12,9 +12,9 @@ import { doc, deleteDoc } from 'firebase/firestore'
 const AdminPage = () => {
 
     const { obtenerProductos, productos } = useDatosCard()
-    const [onDisabled, setOnDisabled] = useState(false);
     const [onShow, setOnShow] = useState(false);
     const [productoEdit, setProductoEdit] = useState({});
+   
 
 
     useEffect(() => {
@@ -22,7 +22,6 @@ const AdminPage = () => {
     })
 
     const Editproducto = (producto) => {
-        setOnDisabled(true);
         setOnShow(true);
         console.log(producto)
         setProductoEdit(producto)
@@ -53,7 +52,7 @@ const AdminPage = () => {
             </section>
 
             <ModalAdmin></ModalAdmin>
-            <EditAdmin onShow={onShow} productoEdit={productoEdit}></EditAdmin>
+            <EditAdmin onShow={onShow} productoEdit={productoEdit} setOnShow={setOnShow}></EditAdmin>
 
 
             <section className={styles.tableAdmin}>

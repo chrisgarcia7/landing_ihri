@@ -15,6 +15,8 @@ const ModalAdmin = () => {
   const [subtitulo, setSubtitulo] = useState('');
   const [subiendo, setSubiendo] = useState(false);
 
+  
+
   const {uploadImages1} = useDatosCard();
 
   const manejarCambioImagenes = (e) => {
@@ -45,9 +47,11 @@ const ModalAdmin = () => {
       setTitulo('');
       setSubtitulo('');
       setImagenes([]);
+      setSubiendo(false)
     } catch (error) {
       console.error("Error al guardar:", error);
       alert("Error al guardar el producto");
+      setSubiendo(false);
     }
    }
 
@@ -72,7 +76,7 @@ const ModalAdmin = () => {
               <img key={index} src={URL.createObjectURL(imagen)} alt="Vista previa" className={`${styles.imagenPrevia} m-4 rounded`} />
             ))}
           </div>
-          <Button variant='success' onClick={enviarFirestore} className='mt-2 col-12'>Guardar</Button>
+          <Button variant='success' disabled={subiendo} onClick={enviarFirestore} className='mt-2 col-12'>{subiendo ? "Cargando..." : "Guardar"}</Button>
         </div>
       )}
     </div>

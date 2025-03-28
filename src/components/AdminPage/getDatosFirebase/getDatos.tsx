@@ -40,15 +40,15 @@ const useDatosCard = () => {
 
   const actualizarProducto = async (idProducto, titulo, subtitulo, imagenes) => {
     const urlImagenes = await Promise.all(imagenes.map(uploadImages1))
-
+    
     try {
       await updateDoc(doc(db, "productos", idProducto), {
         titulo: titulo,
         subtitulo: subtitulo,
         imagen: urlImagenes
       })
-
       alert("¡Producto actualizado con éxito!")
+     
     } catch (error) {
       console.error(error)
       alert("error al actualizar!");
