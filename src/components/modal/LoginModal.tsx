@@ -42,7 +42,8 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
       try {
         await signInWithEmailAndPassword(auth, email, password);
         alert("Inicio de sesión exitoso");
-        setCorreo(email)
+        setCorreo(email);
+
         handleClose(); 
       } catch (err) {
         setError(err.message);
